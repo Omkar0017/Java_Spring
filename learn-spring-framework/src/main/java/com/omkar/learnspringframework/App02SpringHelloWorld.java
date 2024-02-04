@@ -1,5 +1,6 @@
 package com.omkar.learnspringframework;
 
+import java.util.Arrays;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class App02SpringHelloWorld {
@@ -19,9 +20,14 @@ public class App02SpringHelloWorld {
     System.out.println("Age------->"+context.getBean("age"));
     System.out.println("Age with type------->"+context.getBean(int.class));
     System.out.println("New Person--------->"+context.getBean("getPerson"));
-    System.out.println("Address------------>"+context.getBean("getAddress"));
-    System.out.println("New Person---------->"+context.getBean("person2MethosCall"));
+    System.out.println("Address------------>"+context.getBean("address2"));
+    System.out.println("New Person by Method---------->"+context.getBean("person2MethosCall"));
+    System.out.println("New Person by Parameter"+context.getBean("person3Parameter"));
+    System.out.println("New Person by using Primary---------->"+context.getBean(Person.class));
+    System.out.println("New Person by using Qualifier-------->"+context.getBean(("person5Qualifier")));
 
+    //List All Beans managed by Spring FrameWork
+    Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
 
   }
 }
