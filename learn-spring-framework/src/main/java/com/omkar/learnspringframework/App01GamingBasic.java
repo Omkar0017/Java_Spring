@@ -1,11 +1,9 @@
 package com.omkar.learnspringframework;
 
 import com.omkar.learnspringframework.game.GameRunner;
-import com.omkar.learnspringframework.game.MarioGame;
 import com.omkar.learnspringframework.game.PacMan;
-import com.omkar.learnspringframework.game.SuperContraGame;
 
-public class AppGamingBasic {
+public class App01GamingBasic {
 
   public static void main(String[] args) {
     //var game = new MarioGame();
