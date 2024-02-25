@@ -1,5 +1,9 @@
 package com.omkar.learnspringframework.game;
 
+
+import org.springframework.stereotype.Component;
+
+@Component
 public class MarioGame implements GameConsole{
 
   public void up(){
