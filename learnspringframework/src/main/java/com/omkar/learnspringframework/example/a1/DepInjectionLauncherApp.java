@@ -37,17 +37,24 @@ class Bussiness {
 
   Dependency2 dependency2;
 
-  @Autowired
-  public void setDependency1(Dependency1 dependency1) {
-    System.out.println("*******dependency1***********");
+  
+  public Bussiness(Dependency1 dependency1, Dependency2 dependency2) {
+    System.out.println("COnstructor Injection---------- BusinessClass");
     this.dependency1 = dependency1;
-  }
-
-  @Autowired
-  public void setDependency2(Dependency2 dependency2) {
-    System.out.println("**********dependency2**********");
     this.dependency2 = dependency2;
   }
+
+  //  @Autowired
+//  public void setDependency1(Dependency1 dependency1) {
+//    System.out.println("*******dependency1***********");
+//    this.dependency1 = dependency1;
+//  }
+//
+//  @Autowired
+//  public void setDependency2(Dependency2 dependency2) {
+//    System.out.println("**********dependency2**********");
+//    this.dependency2 = dependency2;
+//  }
 
   public String toString(){
     StringBuffer sb = new StringBuffer();
