@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan("com.omkar.learnspringframework.game")
-public class App03GamingSpringBeans  {
+public class GameLauncherApp  {
 
 
   @Bean
@@ -28,7 +28,7 @@ public class App03GamingSpringBeans  {
 
     System.out.println("Omkar");
 
-    var context = new AnnotationConfigApplicationContext(App03GamingSpringBeans.class);
+    var context = new AnnotationConfigApplicationContext(GameLauncherApp.class);
 
     context.getBean(GameConsole.class).up();
     context.getBean(GameRunner.class).run();

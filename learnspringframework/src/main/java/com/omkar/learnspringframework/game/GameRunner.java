@@ -1,5 +1,8 @@
 package com.omkar.learnspringframework.game;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class GameRunner {
   //MarioGame game;
   private GameConsole game;
