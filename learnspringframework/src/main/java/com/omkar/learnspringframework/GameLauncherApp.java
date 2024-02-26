@@ -2,6 +2,7 @@ package com.omkar.learnspringframework;
 
 import com.omkar.learnspringframework.game.GameConsole;
 import com.omkar.learnspringframework.game.GameRunner;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -18,15 +19,13 @@ public class GameLauncherApp  {
 
 
   @Bean
-  public GameRunner gameRunner(GameConsole game){
+  public GameRunner gameRunner(@Qualifier("SuperContraGameQualifier") GameConsole game){
     System.out.println("Parameter Game------->"+game);
     var gamerunner = new GameRunner(game);
     return gamerunner;
   }
 
   public static void main(String[] args) {
-
-    System.out.println("Omkar");
 
     var context = new AnnotationConfigApplicationContext(GameLauncherApp.class);
 
