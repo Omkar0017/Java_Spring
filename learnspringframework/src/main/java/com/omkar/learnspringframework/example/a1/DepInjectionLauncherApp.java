@@ -37,7 +37,7 @@ class Bussiness {
 
   Dependency2 dependency2;
 
-  
+
   public Bussiness(Dependency1 dependency1, Dependency2 dependency2) {
     System.out.println("COnstructor Injection---------- BusinessClass");
     this.dependency1 = dependency1;
