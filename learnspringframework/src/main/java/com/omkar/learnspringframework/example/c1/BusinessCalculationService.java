@@ -15,7 +15,7 @@ public class BusinessCalculationService {
     this.dataService = dataService;
   }
 
-  public int findMax() {
+  public int findMax() {  
     return Arrays.stream(dataService.retriveData()).max().orElse(0);
   }
 
