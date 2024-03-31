@@ -1,8 +1,10 @@
 package com.omkar.learnspringframework.example.c1;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
+//@Component
+@Repository
 public class MySQLService implements DataService {
 
   @Override

@@ -2,9 +2,11 @@ package com.omkar.learnspringframework.example.c1;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
+//@Component
 @Primary
+@Repository
 public class MongoDBService implements DataService{
 
   @Override
