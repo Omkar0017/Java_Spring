@@ -18,6 +18,8 @@ public class CourseJdbcCommandLineRunner implements CommandLineRunner {
       repository.insert(new Course(3,"React","Danny"));
 
       repository.deleteById(2);
+
+      System.out.println(repository.selectById(3).toString());
   }
 
 
