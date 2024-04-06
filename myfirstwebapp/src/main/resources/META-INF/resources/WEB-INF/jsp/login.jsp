@@ -6,7 +6,7 @@
     <title>Login Page</title>
 </head>
 <body>
-    <h2>Login</h2>
+    <h2>Welcome to Login Page ${name}</h2>
     <form action="#" method="post">
         <div>
             <label for="username">Username:</label>
