@@ -1,12 +1,14 @@
 package com.in28minutes.spring.myfirstwebapp.hello;
 
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @Controller
+@Slf4j
 public class SayHelloWorldController {
 
 
@@ -20,6 +22,7 @@ public class SayHelloWorldController {
   @ResponseBody
   public String sayHelloHtml(){
 
+    log.info("----Inside sayHelloHTML---");
     StringBuffer sb  = new StringBuffer();
     sb.append("<html>");
     sb.append("<head>");
@@ -35,6 +38,7 @@ public class SayHelloWorldController {
 
   @RequestMapping("say-hello-jsp")
   public String sayHelloJsp() {
+    log.info("-----INnside sayHelloJSP-----");
     System.out.println("Inside hellojsp");
     return "sayHello";
   }
