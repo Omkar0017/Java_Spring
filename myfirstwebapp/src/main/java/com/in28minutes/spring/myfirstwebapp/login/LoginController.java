@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -13,12 +14,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class LoginController {
 
 private Logger log =  LoggerFactory.getLogger(getClass());
-  @RequestMapping("/login")
-  public String loginPage(@RequestParam String name, ModelMap model){
-    log.info("Request Parameter is---->"+name);
-    System.out.println("Request Parameter is---->"+ name);
-
-    model.put("name",name);
+  @RequestMapping(value = "/login", method = RequestMethod.GET)
+  public String loginPage(){
     return "login";
+  }
+
+
+  @RequestMapping(value = "/login", method = RequestMethod.POST)
+  public String gotoWelcomePage(@RequestParam String name , @RequestParam String password, ModelMap map){
+    map.put("name",name);
+    return "welcome";
   }
 }

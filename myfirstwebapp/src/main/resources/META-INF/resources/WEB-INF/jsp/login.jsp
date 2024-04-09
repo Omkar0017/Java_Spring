@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-</head>
+<title> Login Page </title>
+</head
+
 <body>
-    <h2>Welcome to Login Page ${name}</h2>
-    <form action="#" method="post">
-        <div>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-        </div>
-        <div>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <div>
-            <input type="submit" value="Login">
-        </div>
-    </form>
+  Welcome to Login Page
+  <form method="post">
+
+    Name: <input type="text" name="name">
+    PassWord: <input type="password" name="password">
+    <input type="submit">
+
+  </form>
 </body>
 </html>
