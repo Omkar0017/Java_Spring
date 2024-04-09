@@ -12,6 +12,8 @@
     PassWord: <input type="password" name="password">
     <input type="submit">
 
+    <br>
+    ${error}
   </form>
 </body>
 </html>
