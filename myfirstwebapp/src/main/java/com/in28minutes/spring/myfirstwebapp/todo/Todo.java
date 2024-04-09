@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 public class Todo {
 
-  //id,username,escription,targetdate,done
 
 
   private int id;
