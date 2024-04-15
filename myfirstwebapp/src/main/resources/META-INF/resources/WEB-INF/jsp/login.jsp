@@ -1,19 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
 <title> Login Page </title>
-</head
-
+</head>
 <body>
-  Welcome to Login Page
-  <form method="post">
+    <div class="container">
+      <h1>Login</h1>
+      <form method="post">
 
-    Name: <input type="text" name="name">
-    PassWord: <input type="password" name="password">
-    <input type="submit">
+        Name: <input type="text" name="name">
+        PassWord: <input type="password" name="password">
+        <input type="submit">
 
-    <br>
-    ${error}
-  </form>
+        <br>
+        ${error}
+      </form>
+     </div>
 </body>
 </html>

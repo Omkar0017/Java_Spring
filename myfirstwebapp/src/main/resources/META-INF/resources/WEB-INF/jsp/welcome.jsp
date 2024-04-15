@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <title> Welcome Page </title>
-</head
+</head>
 
 <body>
-  Welcome to ${name}'s Page
-  <hr>
-<br>
- <a href="todo-list">Manage</a> your todos
-
-  </form>
+<div class="container">
+	<h1>Welcome ${name}</h1>
+	<a href="list-todos">Manage</a> your todos
+</div>
 </body>
 </html>
