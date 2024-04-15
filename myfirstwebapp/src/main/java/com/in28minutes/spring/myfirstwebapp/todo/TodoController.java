@@ -54,7 +54,7 @@ public class TodoController {
       return "todos";
     }
     String username = (String) map.get("name");
-    todoService.addTodo(username,todo.getDescription(), LocalDate.now().plusYears(1),false);
+    todoService.addTodo(username,todo.getDescription(), todo.getTargetDate(),false);
     return "redirect:list-todos";
   }
 
@@ -68,4 +68,25 @@ public class TodoController {
   }
 
 
+  @RequestMapping(value = "/update-todo",method = RequestMethod.GET)
+  public String showUpdatePage(@RequestParam int id, ModelMap map){
+    log.info("Inside Update Todo");
+    Todo todo = todoService.findById(id);
+    map.put("todo",todo);
+    return "todos";
+  }
+
+  @RequestMapping(value = "/update-todo", method = RequestMethod.POST)
+  public String updateTodo(ModelMap map, @Valid Todo todo, BindingResult result){
+    log.info("Inside addNewTodo");
+
+    if (result.hasErrors()){
+
+      return "todos";
+    }
+    String username = (String) map.get("name");
+    todo.setUsername(username);
+    todoService.updateTodo(todo);
+    return "redirect:list-todos";
+  }
 }
