@@ -3,6 +3,7 @@ package com.in28minutes.spring.myfirstwebapp.todo;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -25,4 +26,9 @@ public class TodoService {
     todos.add(todo);
 
   }
+
+public  void deleteById(int id){
+  Predicate<? super Todo> predicate = todo -> todo.getId() == id;
+  todos.removeIf(predicate);
+}
 }
