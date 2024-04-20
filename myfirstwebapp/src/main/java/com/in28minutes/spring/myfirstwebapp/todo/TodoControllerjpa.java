@@ -21,9 +21,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 public class TodoControllerjpa {
 
   @Autowired
-  TodoService todoService;
-
-  @Autowired
   TodoRepository todoRepository;
 
 
@@ -57,7 +54,9 @@ public class TodoControllerjpa {
       return "todos";
     }
     String username = getLoggedInUsername();
-    todoService.addTodo(username,todo.getDescription(), todo.getTargetDate(),false);
+    todo.setUsername(username);
+    todoRepository.save(todo);
+    //todoService.addTodo(username,todo.getDescription(), todo.getTargetDate(),todo.isDone());
     return "redirect:list-todos";
   }
 
@@ -65,8 +64,8 @@ public class TodoControllerjpa {
   @RequestMapping("/delete-todo")
   public String deleteTodo(@RequestParam int id, ModelMap map){
   log.info("Inside Delete Todo");
-  todoService.deleteById(id);
-
+  //todoService.deleteById(id);
+  todoRepository.deleteById(id);
   return "redirect:list-todos";
   }
 
@@ -74,7 +73,7 @@ public class TodoControllerjpa {
   @RequestMapping(value = "/update-todo",method = RequestMethod.GET)
   public String showUpdatePage(@RequestParam int id, ModelMap map){
     log.info("Inside Update Todo");
-    Todo todo = todoService.findById(id);
+    Todo todo = todoRepository.findById(id).get();
     map.put("todo",todo);
     return "todos";
   }
@@ -89,7 +88,7 @@ public class TodoControllerjpa {
     }
     String username = getLoggedInUsername();
     todo.setUsername(username);
-    todoService.updateTodo(todo);
+    todoRepository.save(todo);
     return "redirect:list-todos";
   }
 

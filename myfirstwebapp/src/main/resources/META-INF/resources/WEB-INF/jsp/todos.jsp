@@ -16,6 +16,12 @@
         <form:errors path="targetDate" cssClass="text-warning"/>
       </fieldset>
 
+      <fieldset class="mb-3">
+        <form:label path="description">Description</form:label>
+        <form:input type="text"  path="description" required="required"/>
+        <input type="submit" class="btn btn-success"/>
+      </fieldset>
+
       <br>
       <form:errors   path="description" cssClass="text-warning" />
       <form:input type="hidden"  path="id" required="required"/>
