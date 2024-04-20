@@ -15,19 +15,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-//@Controller
+@Controller
 @SessionAttributes("name")
 @Slf4j
-public class TodoController {
+public class TodoControllerjpa {
 
   @Autowired
   TodoService todoService;
+
+  @Autowired
+  TodoRepository todoRepository;
 
 
   @RequestMapping("/list-todos")
   public String getToDoList(ModelMap map){
 
-    List<Todo> todoList = todoService.findByUsername(getLoggedInUsername());
+    List<Todo> todoList = todoRepository.findByUsername(getLoggedInUsername());
     map.put("todoList",todoList);
 
     return "listTodo";

@@ -1,15 +1,23 @@
 package com.in28minutes.spring.myfirstwebapp.todo;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.Date;
 import org.springframework.stereotype.Repository;
 
 
+@Entity
 public class Todo {
 
 
+  public Todo() {
+  }
 
+  @GeneratedValue
+  @Id
   private int id;
   private String username;
   @Size(min = 5,message = "Add Atleast 5 characters")
