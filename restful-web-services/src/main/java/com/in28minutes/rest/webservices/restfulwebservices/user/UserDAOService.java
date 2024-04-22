@@ -27,14 +27,14 @@ public class UserDAOService {
 
   public User findUser(int id){
     Predicate<? super User> predicate = user -> user.getId() == id;
-    return  users.stream().filter(predicate).findFirst().get();
+    return  users.stream().filter(predicate).findFirst().orElse(null);
 
   }
 
-  public boolean save(User user){
+  public User save(User user){
     user.setId(++userCount);
     users.add(user);
-    return true;
+    return user;
   }
 
 }
