@@ -1,5 +1,6 @@
 package com.in28minutes.rest.webservices.restfulwebservices.user;
 
+import jakarta.validation.Valid;
 import java.net.URI;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
@@ -47,7 +48,7 @@ public class UserResource {
 
 
   @PostMapping("/users")
-  public ResponseEntity<User> createUser(@RequestBody User user){
+  public ResponseEntity<User> createUser(@RequestBody  @Valid User user){
     log.info("<---------createUser start--------->");
     //User user = new User(5,"Sanket", LocalDate.now().minusYears(29));
      User savedUser = userDAOService.save(user);
