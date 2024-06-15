@@ -16,4 +16,16 @@ public class VersioningPersonController {
   public PersonV2 getSecondVersionOfPerson(){
     return new PersonV2(new Name("Omkar", "Patil"));
   }
+
+  @GetMapping(path = "person",params = "version=1")
+  public PersonV1 getFirstVersionOfPersonVersioning(){
+    return new PersonV1("Omkar Patil");
+  }
+
+
+  @GetMapping(path = "person",params = "version=2")
+  public PersonV2 getSecondVersionOfPersonVersioning(){
+    return new PersonV2(new Name("Omkar", "Patil"));
+  }
+
 }
