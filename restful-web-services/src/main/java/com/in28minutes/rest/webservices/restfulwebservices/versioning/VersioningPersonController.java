@@ -17,15 +17,27 @@ public class VersioningPersonController {
     return new PersonV2(new Name("Omkar", "Patil"));
   }
 
+  //http://localhost:8080/person?version=2
   @GetMapping(path = "person",params = "version=1")
-  public PersonV1 getFirstVersionOfPersonVersioning(){
+  public PersonV1 getFirstVersionOfPersonRequestParam(){
     return new PersonV1("Omkar Patil");
   }
 
 
   @GetMapping(path = "person",params = "version=2")
-  public PersonV2 getSecondVersionOfPersonVersioning(){
+  public PersonV2 getSecondVersionOfPersonRequestParam(){
     return new PersonV2(new Name("Omkar", "Patil"));
   }
 
+  //http://localhost:8080/person/header header = X-API-VERSION =1
+  @GetMapping(path = "person/header",headers = "X-API-VERSION=1")
+  public PersonV1 getFirstVersionOfPersonRequestHeader(){
+    return new PersonV1("Omkar Patil");
+  }
+
+
+  @GetMapping(path = "person/header",headers = "X-API-VERSION=2")
+  public PersonV2 getSecondVersionOfPersonRequestHeader(){
+    return new PersonV2(new Name("Omkar", "Patil"));
+  }
 }
