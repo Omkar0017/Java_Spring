@@ -1,15 +1,17 @@
 package com.in28minutes.rest.webservices.restfulwebservices.filtering;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
+@JsonFilter("SomeBeanFilter")
 @Data
-@JsonIgnoreProperties("field4")
+//@JsonIgnoreProperties("field4")
 public class SomeBean {
 
   private String field1 ;
-  @JsonIgnore  //Static filetring
+//  @JsonIgnore  //Static filetring
   private String field2 ;
   private String field3 ;
   private String field4 ;
