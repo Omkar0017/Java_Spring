@@ -13,9 +13,10 @@ public class BusinessService1 {
     @Autowired
     private DataService1 dataService1;
 
-    public int calculateMAx(){
+    public int calculateMAx() throws InterruptedException {
         int[] data = dataService1.retriveData();
 
+//        throw new RuntimeException("Something happened");
         return Arrays.stream(data).max().orElse(0);
     }
 }
