@@ -12,4 +12,8 @@ public class CommonPointcutConfig {
 
     @Pointcut("execution(* com.in28minutes.learn_spring_aop.aopexample.data.*.*(..))")
     public void dataConfig(){}
+
+
+    @Pointcut("@annotation(com.in28minutes.learn_spring_aop.aopexample.annotations.TrackTime)")
+    public void trackTimeAnnotation() {}
 }
