@@ -10,5 +10,8 @@
   "description": "",
   "dependencies": {
     "jquery": "^3.7.1"
+  },
+  "devDependencies": {
+    "web-vitals": "^4.2.4"
   }
 }
