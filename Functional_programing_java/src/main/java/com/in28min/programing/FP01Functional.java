@@ -10,8 +10,15 @@ public class FP01Functional {
         printAllNumbersInListFunctional(numbers);
         System.out.println(BreakPattern);
         printEvenNumbersInListFunctional(numbers);
+        System.out.println(BreakPattern);
+        printOddNumberInListFunctional(numbers);
 
 
+    }
+
+    private static void printOddNumberInListFunctional(List<Integer> numbers) {
+        numbers.stream().filter(integer -> integer%2 != 0)
+                .forEach(System.out::println);
     }
 
     private static boolean isEven(int number){
