@@ -1,15 +1,11 @@
 import './App.css';
-import LearningComponent from './component/learning-examples/LearningComponent';
-
+import Counter from './component/counter/Counter';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-            My TODO Application 
-
-            <LearningComponent />      
-      </header>
+      <Counter/>      
+     
     </div>
   );
 }
