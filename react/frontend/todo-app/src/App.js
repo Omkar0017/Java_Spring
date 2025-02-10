@@ -4,6 +4,7 @@ import Counter from './component/counter/Counter';
 function App() {
   return (
     <div className="App">
+      
       <Counter/>      
      
     </div>
