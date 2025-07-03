@@ -1,31 +1,38 @@
-import "./Counter.css"
+import { useState } from 'react'
+import './Counter.css'
+import CounterButton from './CounterButton'
 
 export default function Counter() {
+    
+    const [count, setCount] = useState(0)
 
-    // const buttonStyle ={fontSize:"20px",
-    //                     backgroundColor:"#00a5ab",
-    //                     width:"100px",
-    //                     margin:"10px",
-    //                     padding:"15px",
-    //                     color:"white",
-    //                     borderRadius:"15px"
-
-    // }
-
-    function increment(){
-        alert("Increment Clicked")
-        console.log("Increment Clicked")
+    function incrementCounterParentFunction(by) {
+        setCount(count + by)
     }
-return(
-    <div className="counter">  
-        <span className="count">0</span>
-        <div>
-            <button className="counterButton" 
-            onClick={increment}
-            
-            > +1
-            </button>
-        </div>
-    </div>
-)
+
+    function decrementCounterParentFunction(by) {
+        setCount(count - by)
+    }
+
+    function resetCounter() {
+        setCount(0)
+    }
+
+    return (
+        <>
+            <span className="totalCount">{count}</span>
+            <CounterButton by={1} 
+                incrementMethod={incrementCounterParentFunction} 
+                decrementMethod={decrementCounterParentFunction}/>
+            <CounterButton by={2} 
+                incrementMethod={incrementCounterParentFunction}
+                decrementMethod={decrementCounterParentFunction}/>
+            <CounterButton by={5} 
+                incrementMethod={incrementCounterParentFunction}
+                decrementMethod={decrementCounterParentFunction}/>
+            <button className="resetButton" 
+                        onClick={resetCounter}
+                >Reset</button>
+        </>
+    )
 }
