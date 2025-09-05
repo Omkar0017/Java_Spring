@@ -9,7 +9,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "jquery": "^3.7.1"
+    "jquery": "^3.7.1",
+    "my-first-npm-project": "file:"
   },
   "devDependencies": {
     "web-vitals": "^4.2.4"
