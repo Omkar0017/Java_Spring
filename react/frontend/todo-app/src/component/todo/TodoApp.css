@@ -1,0 +1,14 @@
+label, input, button{
+    margin: 10px;
+    padding: 5px;
+}
+
+.successMessage{
+    margin: 10px;
+    color: #0d8d04;
+}
+
+.errorMessage{
+    margin: 10px;
+    color: #dc0404;
+}

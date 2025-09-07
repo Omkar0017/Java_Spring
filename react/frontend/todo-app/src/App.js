@@ -1,11 +1,10 @@
 import './App.css';
-import Counter from './component/counter/CounterButton';
+import TodoApp from './component/todo/TodoApp';
 
 function App() {
   return (
     <div className="App">
-      <PlayingWithProps property1="value1" property2="value2"/> 
-      <Counter />      
+      <TodoApp />
     </div>
   );
 }
