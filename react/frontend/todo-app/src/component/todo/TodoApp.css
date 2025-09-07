@@ -12,3 +12,8 @@ label, input, button{
     margin: 10px;
     color: #dc0404;
 }
+
+.ErrorComponent{
+    margin: 10px;
+    color: #dc0404;
+}
